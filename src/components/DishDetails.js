@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, CardBody, CardText, Media } from 'reactstrap';
+import { Card, CardImg, CardTitle, CardBody, CardText, Media } from 'reactstrap';
 import {COMMENTS} from '../shared/Comments';
 
 

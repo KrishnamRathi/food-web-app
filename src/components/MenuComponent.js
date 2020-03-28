@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, CardBody, CardText } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle} from 'reactstrap';
 import DishDetails from './DishDetails';
 
 

@@ -1,26 +1,163 @@
-export const COMMENTS = [
+export const COMMENTS = 
+[
+    {
+        id: 0,
+        dishId: 0,
+        rating: 5,
+        comment: "Imagine all the eatables, living in conFusion!",
+        name: "John Lemon",
+        date: "2012-10-16T17:57:28.556094Z"
+    },
     {
         id: 1,
-        name: 'chotu',
-        date: '27 March, 2020',
-        comment: 'Food is life',
+        dishId: 0,
+        rating: 4,
+        comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+        name: "Paul McVites",
+        date: "2014-09-05T17:57:28.556094Z"
     },
     {
         id: 2,
-        name: 'motu',
-        date: '21 Feb, 2020',
-        comment: 'Cheese is life',
+        dishId: 0,
+        rating: 3,
+        comment: "Eat it, just eat it!",
+        name: "Michael Jaikishan",
+        date: "2015-02-13T17:57:28.556094Z"
     },
     {
         id: 3,
-        name: 'taklu',
-        date: '30 Oct, 2019',
-        comment: 'Food makes me look fat',
+        dishId: 0,
+        rating: 4,
+        comment: "Ultimate, Reaching for the stars!",
+        name: "Ringo Starry",
+        date: "2013-12-02T17:57:28.556094Z"
     },
     {
         id: 4,
-        name: 'kaalu',
-        date: '21 Feb, 2019',
-        comment: 'I want some extra cheese',
+        dishId: 0,
+        rating: 2,
+        comment: "It's your birthday, we're gonna party!",
+        name: "25 Cent",
+        date: "2011-12-02T17:57:28.556094Z"
     },
-]
+    {
+        id: 5,
+        dishId: 1,
+        rating: 5,
+        comment: "Imagine all the eatables, living in conFusion!",
+        name: "John Lemon",
+        date: "2012-10-16T17:57:28.556094Z"
+    },
+    {
+        id: 6,
+        dishId: 1,
+        rating: 4,
+        comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+        name: "Paul McVites",
+        date: "2014-09-05T17:57:28.556094Z"
+    },
+    {
+        id: 7,
+        dishId: 1,
+        rating: 3,
+        comment: "Eat it, just eat it!",
+        name: "Michael Jaikishan",
+        date: "2015-02-13T17:57:28.556094Z"
+    },
+    {
+        id: 8,
+        dishId: 1,
+        rating: 4,
+        comment: "Ultimate, Reaching for the stars!",
+        name: "Ringo Starry",
+        date: "2013-12-02T17:57:28.556094Z"
+    },
+    {
+        id: 9,
+        dishId: 1,
+        rating: 2,
+        comment: "It's your birthday, we're gonna party!",
+        name: "25 Cent",
+        date: "2011-12-02T17:57:28.556094Z"
+    },
+    {
+        id: 10,
+        dishId: 2,
+        rating: 5,
+        comment: "Imagine all the eatables, living in conFusion!",
+        name: "John Lemon",
+        date: "2012-10-16T17:57:28.556094Z"
+    },
+    {
+        id: 11,
+        dishId: 2,
+        rating: 4,
+        comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+        name: "Paul McVites",
+        date: "2014-09-05T17:57:28.556094Z"
+    },
+    {
+        id: 12,
+        dishId: 2,
+        rating: 3,
+        comment: "Eat it, just eat it!",
+        name: "Michael Jaikishan",
+        date: "2015-02-13T17:57:28.556094Z"
+    },
+    {
+        id: 13,
+        dishId: 2,
+        rating: 4,
+        comment: "Ultimate, Reaching for the stars!",
+        name: "Ringo Starry",
+        date: "2013-12-02T17:57:28.556094Z"
+    },
+    {
+        id: 14,
+        dishId: 2,
+        rating: 2,
+        comment: "It's your birthday, we're gonna party!",
+        name: "25 Cent",
+        date: "2011-12-02T17:57:28.556094Z"
+    },
+    {
+        id: 15,
+        dishId: 3,
+        rating: 5,
+        comment: "Imagine all the eatables, living in conFusion!",
+        name: "John Lemon",
+        date: "2012-10-16T17:57:28.556094Z"
+    },
+    {
+        id: 16,
+        dishId: 3,
+        rating: 4,
+        comment: "Sends anyone to heaven, I wish I could get my mother-in-law to eat it!",
+        name: "Paul McVites",
+        date: "2014-09-05T17:57:28.556094Z"
+    },
+    {
+        id: 17,
+        dishId: 3,
+        rating: 3,
+        comment: "Eat it, just eat it!",
+        name: "Michael Jaikishan",
+        date: "2015-02-13T17:57:28.556094Z"
+    },
+    {
+        id: 18,
+        dishId: 3,
+        rating: 4,
+        comment: "Ultimate, Reaching for the stars!",
+        name: "Ringo Starry",
+        date: "2013-12-02T17:57:28.556094Z"
+    },
+    {
+        id: 19,
+        dishId: 3,
+        rating: 2,
+        comment: "It's your birthday, we're gonna party!",
+        name: "25 Cent",
+        date: "2011-12-02T17:57:28.556094Z"
+    }
+];
