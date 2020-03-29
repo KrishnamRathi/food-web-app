@@ -1,51 +1,49 @@
 
-import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle} from 'reactstrap';
-import DishDetails from './DishDetails';
+import React from 'react';
+import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Link} from 'react-router-dom';
 
-
-class Menu extends Component {
-
-constructor(props) {
-    super(props)
-
-    this.state = {
-        selectedDish: null,
-    }
-};
-
-onSelectDish(dish) {
-    this.setState({
-        selectedDish: dish,
-    })
+function RenderDish({dish}){
+    return (
+        <Link to={`/menu/${dish.id}`}>
+        <Card >
+            <CardImg width="100%" src={dish.image} alt={dish.name} />
+            <CardImgOverlay>
+                <CardTitle>{dish.name}</CardTitle>
+            </CardImgOverlay>
+        </Card>
+        </Link>
+    )
 }
 
-render() {
 
-    const menu = this.props.dishes.map((dish) => {
-        return (
+function Menu(props){
+
+    const menu = props.dishes.map((dish) => {
+        return(
             <div key={dish.id} className="col-12 col-md-5 m-1" >
-                <Card onClick={() => { this.onSelectDish(dish) }}>
-                    <CardImg width="100%" src={dish.image} alt={dish.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{dish.name}</CardTitle>
-                    </CardImgOverlay>
-                </Card>
+                <RenderDish dish={dish}/>
             </div>
         )
     })
 
     return (
         <div className="contaier m-5" >
-            <div className="row">
-                {menu}
+           <div className="row ">
+                <Breadcrumb>
+                <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                <BreadcrumbItem>Menu</BreadcrumbItem>
+                </Breadcrumb>
             </div>
             <div className="row">
-                <DishDetails selectedDish={this.state.selectedDish}/>
+                <h2>Menu</h2>
+            </div>
+            <hr/>
+            <div className="row m-5">
+                {menu}
             </div>
         </div>
     );
-}
 }
 
 export default Menu;

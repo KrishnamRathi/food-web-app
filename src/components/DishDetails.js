@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardTitle, CardBody, CardText, Media } from 'reactstrap';
-import {COMMENTS} from '../shared/Comments';
+import { Card, CardImg, CardTitle, CardBody, CardText, Media, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 
-class DishDetails extends Component {
-    
-    constructor(props) {
-      super(props)
-    
-      this.state = {
-        comments: COMMENTS,
-      };
-    };
-    
-    renderDish(dish) {
-        if (dish) {
+class DishDetails extends Component { 
+    renderDish(dish, comments) {
             return (
                 <div className="row m-1"  >
                     <div className="col-12 col-sm-5">
@@ -27,35 +17,43 @@ class DishDetails extends Component {
                         </Card>
                     </div>
                     <div className="col-12 col-sm-5">
-                        <Media list >
-                            <Media heading>comments</Media>
-                            {this.state.comments.map((comments) => {
-                                return(
-                                <Media tag="li">
-                                    <Media body>
-                                        <p>
-                                            {comments.comment}
-                                            <p className="my-3">-- {comments.name}, {comments.date}</p>
-                                        </p>
-                                    </Media>
+                    <Media list >
+                        <Media heading>Comments</Media>
+                        {comments.map((comment) => {
+                        return(
+                            <Media tag="li">
+                                <Media body>
+                                    <p>
+                                    {comment.comment}
+                                    <p className="my-3">-- {comment.name}, {comments.date}</p>
+                                    </p>
                                 </Media>
-                                )
-                            })}
-                        </Media>
+                            </Media>
+                        )})
+                        }
+                    </Media>
                     </div>
                 </div>
             )
-        }else{
-            return(<div></div>)
-        }
-        
     }
 
 
   render() {
     return (
-      <div>
-          {this.renderDish(this.props.selectedDish)}
+      <div className="container">
+          <div className="row ">
+                <Breadcrumb>
+                <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                <BreadcrumbItem active>Menu</BreadcrumbItem>
+                </Breadcrumb>
+            </div>
+            <div className="row">
+            <h2>{this.props.name}</h2>
+            </div>
+            <hr/>
+          <div className="row m-5">
+            {this.renderDish(this.props.dish, this.props.comments)}
+          </div>
       </div>
     );
   }
