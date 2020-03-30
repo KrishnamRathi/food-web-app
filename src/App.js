@@ -11,7 +11,7 @@ import Home from './components/HomeComponent';
 import Contact from './components/ContactComponent';
 import {BrowserRouter, Switch, Redirect, Route } from 'react-router-dom';
 import DishDetails from './components/DishDetails';
-
+import AboutUs from './components/AboutUsComponent';
 
 class App extends Component{
 	constructor(props) {
@@ -52,6 +52,7 @@ class App extends Component{
 					<Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />}/>
 					<Route exact path='/contactus' component={Contact} />
 					<Route path='/menu/:dishId' component={DishWithId}/>
+					<Route path= '/aboutus' component={() => <AboutUs leaders={this.state.leaders} />}/>
 					<Redirect to='/home'/>
 				</Switch>
 				<Footer/>

@@ -28,7 +28,7 @@ function Menu(props){
     })
 
     return (
-        <div className="contaier m-5" >
+        <div className="contaier m-5 " >
            <div className="row ">
                 <Breadcrumb>
                 <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
