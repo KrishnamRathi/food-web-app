@@ -26,7 +26,7 @@ class Header extends Component {
 
     onToogleModal(){
         this.setState({
-            isModalOpen: !this.isModalOpen
+            isModalOpen: !this.state.isModalOpen
         })
     }
     handleSubmit(event){
@@ -98,8 +98,8 @@ class Header extends Component {
            </div>
        </Jumbotron>
 
-       <Modal isOpen={this.state.isModalOpen} toggle={this.onToogleModal}>
-        <ModalHeader> Login</ModalHeader>
+       <Modal isOpen={this.state.isModalOpen}>
+        <ModalHeader toggle={this.onToogleModal}> Login </ModalHeader>
         <ModalBody>
             <Form onSubmit={this.handleSubmit}>
                 <FormGroup>
