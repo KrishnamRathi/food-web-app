@@ -29,13 +29,6 @@ function RenderComments({comment}){
     )
 }
 
-function RenderModal({isModalOpen, toggleModal}){
-    return(
-        <div>
-
-        </div>
-    )
-}
 
 class DishDetails extends Component{
 
@@ -54,6 +47,13 @@ class DishDetails extends Component{
         })
     }
     
+    handleSubmit(values){
+        this.toggleModal();
+        console.log(this.state.isModalOpen);
+        this.props.addComment(this.props.dish.id, values.select, values.name, values.comment)
+
+
+    } 
 
     render(){
         const required = (val) => val && val.length;
@@ -80,7 +80,7 @@ class DishDetails extends Component{
                   <div className="col-12 col-md-5">
                        <Media list>
                            <Media heading> Comments </Media>
-                            {this.props.comments.map((comment) => <RenderComments comment={comment}/>)}
+                            {this.props.comments.map((comment) => <RenderComments comment={comment} />)}
                        </Media>
                        <Button outline color="primary" onClick={this.toggleModal} >
                            <span className="fa fa-edit fa-lg m-1"></span> 
@@ -91,7 +91,7 @@ class DishDetails extends Component{
                     <Modal isOpen={this.state.isModalOpen}>
                         <ModalHeader toggle={this.toggleModal}> Submit Comment</ModalHeader>
                         <ModalBody>
-                            <LocalForm className="pl-3">
+                            <LocalForm className="pl-3" onSubmit={(values) => this.handleSubmit(values)} >
                                  <Row className="form-group">
                                      <Label htmlFor="select">Rating</Label>
                                      <Control.select model=".select" 
@@ -137,7 +137,7 @@ class DishDetails extends Component{
                                         className="form-control"/>
                                  </Row>
                                  <Row className="form-group">
-                                    <Button color="primary" >Submit</Button>
+                                    <Button color="primary" type="submit" >Submit</Button>
                                  </Row>
                             </LocalForm>
                         </ModalBody>
