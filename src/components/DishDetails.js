@@ -98,7 +98,7 @@ class DishDetails extends Component{
                   <div className="col-12 col-md-5">
                        <Media list>
                            <Media heading> Comments </Media>
-                            {this.props.comments.map((comment) => <RenderComments comment={comment} />)}
+                           {this.props.comments.map((comment) => <RenderComments comment={comment} />)}
                        </Media>
                        <Button outline color="primary" onClick={this.toggleModal} >
                            <span className="fa fa-edit fa-lg m-1"></span> 

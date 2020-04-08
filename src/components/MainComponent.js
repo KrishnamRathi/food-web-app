@@ -61,7 +61,7 @@ class Main extends Component{
 			return(
 				<DishDetails dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
 					isLoading={this.props.dishes.isLoading}
-					errMess={this.props.dishes.errmsg}item
+					errMess={this.props.dishes.errmsg}
 					comments={this.props.comments.comments.filter((comment) => comment.dishId === parseInt(match.params.dishId,10))}
 					commentsErrMess={this.props.comments.errMess}
 					addComment={this.props.addComment}
