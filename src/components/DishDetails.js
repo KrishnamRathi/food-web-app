@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardTitle, CardBody, CardText, Media, Breadcrumb, BreadcrumbItem, Button, Row, Col, Label, Modal, ModalBody, ModalHeader } from 'reactstrap';
 import {LocalForm, Control, Errors} from 'react-redux-form'; 
 import {Link} from 'react-router-dom';
-
+import {Loading } from './LoadingComponent';
+import {baseUrl} from '../shared/baseUrl';
 
 function RenderDish({dish}){
     return(
         <Card width="100%">
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
+            <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
             <CardBody>
                 <CardTitle>{dish.name}</CardTitle>
                 <CardText>{dish.description}</CardText>
@@ -59,8 +60,25 @@ class DishDetails extends Component{
         const required = (val) => val && val.length;
         const minLength = (len) => (val) => val && val.length >= len;
         const maxLength = (len) => (val) => val && val.length <=len;
-
-
+    if(this.props.isLoading){
+        return (
+            <div className="cotainer">
+                <div className="row">
+                    <Loading/>
+                </div>
+            </div>
+        )
+    }
+    else if(this.props.errMess){
+        return(
+            <div className="cotainer">
+                <div className="row">
+                    <h4>{this.props.errMess}</h4>
+                </div>
+            </div>
+        )
+    }
+    else if(this.props.dish != null){
         return (
             <div className="container">
               <div className="row ">
@@ -147,6 +165,7 @@ class DishDetails extends Component{
               </div>
             </div>
           );
+    } 
     }
 }
 
