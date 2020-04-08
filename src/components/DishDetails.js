@@ -4,9 +4,13 @@ import {LocalForm, Control, Errors} from 'react-redux-form';
 import {Link} from 'react-router-dom';
 import {Loading } from './LoadingComponent';
 import {baseUrl} from '../shared/baseUrl';
+import {Fade, Stagger, FadeTransform} from 'react-animation-components';
 
 function RenderDish({dish}){
     return(
+        <FadeTransform 
+            in 
+            transformProps={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
         <Card width="100%">
             <CardImg width="100%" src={baseUrl + dish.image} alt={dish.name} />
             <CardBody>
@@ -14,6 +18,7 @@ function RenderDish({dish}){
                 <CardText>{dish.description}</CardText>
             </CardBody>
         </Card>
+        </FadeTransform>
     )
 }
 
@@ -98,7 +103,11 @@ class DishDetails extends Component{
                   <div className="col-12 col-md-5">
                        <Media list>
                            <Media heading> Comments </Media>
-                           {this.props.comments.map((comment) => <RenderComments comment={comment} />)}
+                           <Stagger in>
+                               <Fade in>
+                                {this.props.comments.map((comment) => <RenderComments comment={comment} />)}
+                              </Fade>
+                           </Stagger>
                        </Media>
                        <Button outline color="primary" onClick={this.toggleModal} >
                            <span className="fa fa-edit fa-lg m-1"></span> 
